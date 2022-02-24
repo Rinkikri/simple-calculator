@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>simple calculator</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="widt=device-width initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            background-color: hsl(hue, saturation, lightness);
+            color: indianred;
+        }
+
+        h1 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin-top: 3rem;
+            text-align: centre;
+            margin-left: 140px;
+            color: indianred;
+
+        }
+
+        .container {
+            width: 45%;
+            height: 400px;
+            left: 30%;
+            margin: auto;
+            background-color: rgb(122, 212, 235);
+            margin-top: 2rem;
+            border: 1px solid rgb(red, green, blue);
+            padding: 0.4rem;
+            border-radius: 10px;
+
+        }
+
+        /*  form {
+            margin-right: 9px;
+            margin-left: 9px;
+            margin-top: 2px;
+            margin-bottom: 7px;
+        }
+*/
+
+        /* input[type=number],
+        button {
+            width: 100px;
+            padding: 12px 20px;
+            margin: 6px;
+            box-sizing: border-box;
+        }
+
+        label {
+            padding: 12px 12px 12px 0;
+            display: inline-block;
+            font-weight: bold;
+        }
+*/
+
+        /*
+input[type=button] {
+            position: absolute;
+            background-color: hsl(137deg 57% 40%);
+            border: none;
+            color: hsl(55deg 100% 98%);
+            padding: 16px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            margin: 10px 6px 4px;
+            margin-left: 40px;
+            margin-top: px;
+        }
+
+        .bt {
+            margin-top: 0.5rem;
+            background-color: hsl(137deg 57% 40%);
+            border: none;
+            color: hsl(55deg 100% 98%);
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .container-2 {
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @media screen and (max-width: 750px) {
+            .container {
+                width: 100%;
+                height: 100%
+            }
+        }
+        */
+        .input1 {
+            width: 120px;
+            height: 40px;
+            margin-left: 160px;
+        }
+
+        .input2 {
+            margin-top: 20px;
+            width: 120px;
+            height: 40px;
+            margin-left: 20px;
+        }
+
+        .label {
+            position: absolute;
+            margin-top: 20px;
+        }
+
+        .btn1 {
+            position: absolute;
+            margin-top: -50px;
+            background: lawngreen;
+            width: 120px;
+            height: 50px;
+            margin-left: 20px;
+        }
+
+        .btn2 {
+            margin-top: -100px;
+            background: lawngreen;
+            width: 120px;
+            height: 50px;
+            margin-left: 20px;
+        }
+
+        .btn3 {
+            position: absolute;
+            margin-top: -113px;
+            background: lawngreen;
+            width: 120px;
+            height: 50px;
+            margin-left: 450px;
+        }
+
+        .btn4 {
+            position: absolute;
+            margin-top: -50px;
+            background: lawngreen;
+            width: 120px;
+            height: 50px;
+            margin-left: 450px;
+        }
+
+        .btn5 {
+            position: absolute;
+            margin-top: 18px;
+            background: lawngreen;
+            width: 120px;
+            height: 50px;
+            margin-left: 310px;
+        }
+
+        .equal {
+            position: absolute;
+            margin-top: 20px;
+            background: lawngreen;
+            width: 100px;
+            height: 50px;
+            margin-left: 450px;
+        }
+
+        .clear {
+            position: absolute;
+            margin-top: 100px;
+            background: rgb(252, 0, 155);
+            width: 300px;
+            height: 50px;
+            margin-left: 290px;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>simple calculator</h1>
+
+        <div class="container-2">
+            <form method="POST" action="/resl" target="result">
+                <label for="fn" class="label" style="font-size: 20px;">First Number </label><br>
+                <input id="n1" type="number" name="num1" class="input1" required>
+                <br>
+                <label for="sn" style="font-size: 20px;">Second number</label>
+                <input id="n2" type="number" name="num2" class="input2" required>
+                <input type="button" value="+" name="btn" class="btn1" onclick="getval(this.value)">
+                <input type="button" value="-" name="btn" class="btn2" onclick="getval(this.value)"><br>
+                <input type="button" value="*" name="btn" class="btn3" onclick="getval(this.value)">
+                <input type="button" value="/" name="btn" class="btn4" onclick="getval(this.value)">
+                <input type="button" value="%" name="btn" class="btn5" onclick="getval(this.value)">
+
+                <button type="submit" class="equal" id="resultbtn" name="res"
+                    style="width:120px; height: 50px;">=</button>
+                <input type="reset" id="resetbtn" class="clear" onclick="getvalue(this.value) = ' '" value="clear">
+
+
+            </form>
+            <br>
+
+            <label for="res" style="font-size:20px;">Result</label>
+            <iframe src=" " frameborder="0" name="result" width="100%" height="30"
+                style="margin-left:140px; margin-top:-20px;"></iframe>
+            <a href="#">History</a>
+
+        </div>
+    </div>
+</body>
+<script>
+    document.getElementById("restbtn").addEventListener("click", clear);
+    function clear() {
+        window.location.reload();
+    }
+
+    function getval(val) {
+        document.getElementById("resultbtn").value = val;
+    }
+</script>
+</body>
+
+</html>
